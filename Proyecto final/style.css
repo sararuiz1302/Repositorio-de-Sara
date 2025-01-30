@@ -1,0 +1,497 @@
+html {
+    background-color: linear-gradient(245.59deg, #890a83 0%, #5a0656 25%, #0c010c 75%);
+}
+
+/* Normalizacion: es para que no tome las caracteristicas default que ofrece el navegador*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* El box-sizing: border-box es para que mantenga el ancho y alto a pesar de padding y border */
+    font-family: monospace;
+    list-style: none;
+    /* list-style none es para que quite los puntos o decoraciones de las listas que hagamos en toda la web */
+    text-decoration: none;
+    /* esto quita el subrayado de los enlaces */
+    color: white;
+}
+
+
+body {
+    background-image: url(assets/img/estrellas-en-el-universo-morado-4465.jpg.jpg);
+    background-size: cover;
+    background-position: center;
+
+
+}
+
+header {
+    position: fixed;
+    /* Esto hace que el header quede fijo en la parte superior */
+    right: 0;
+    top: 0;
+    z-index: 100;
+    /* Esto hace que el header se muestre por encima  */
+    width: 100%;
+    display: flex;
+    /* Esto es para que los elementos se pongan en linea horizontal */
+    align-items: center;
+    /* Centra verticalmente */
+    justify-content: space-between;
+    /* Hace que los elementos se separen */
+    padding: 15px 3%;
+    /* background-color: transparent; */
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 700;
+    text-shadow: 2px 2px 2px var(--fondo-secundario);
+    /* font-weigth es el grosor de la letra*/
+}
+
+.navlist {
+    display: flex;
+    /* esto es para que los elementos de la lista se pongan en linea horizontal */
+}
+
+.navlist a {
+    margin-left: 60px;
+    /* Esto es para separar las palabras */
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    /* transparent es un subrayado transparente ahr */
+    transition: all 0.5s ease;
+    /* Esto es para animar todas las caracteristicas del nav list a */
+
+}
+
+.navlist a:hover {
+    border-bottom: 2px solid rgb(255, 255, 255);
+    /* esto es un subrayado blanco que aparecera cuando hagamos hover */
+
+}
+
+#menu-icon {
+    display: none;
+    /* esto lo pongo en none para que solo se vea cuando la pagina este colapsada  */
+}
+
+#menu-icon {
+    font-size: 35px;
+    z-index: 101;
+    cursor: pointer;
+    /* el cursor:pointer es para que al pasar el mouse por encima del icono aparezca la manito de seleccion */
+
+}
+
+#menu-toogle {
+    display: none;
+    /* Esto pongo porque no quiero que se vea el checkbox */
+}
+
+.menu-icon-action {
+    display: none;
+    /* el display none es para que no se le pueda hacer click */
+}
+
+.hero {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+
+    display: grid;
+    /* esto es para que el hero se pueda dividir en dos columnas */
+    grid-template-columns: 1fr 1fr;
+    /* estas son las dos columnas */
+    align-items: center;
+    /* esto es para alinear verticalmente el hero */
+    gap: 2rem;
+    /* esto es para que haya espacio entre las columnas */
+}
+
+section {
+    padding: 0 8%;
+}
+
+.hero-text h5 {
+    font-size: 15px;
+    font-weight: 400px;
+    margin-bottom: 25px;
+}
+
+.hero-text h4 {
+    font-size: 19px;
+    font-weight: 600px;
+    margin-bottom: 10px;
+}
+
+.hero-text h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+    line-height: 1;
+    margin: 0 0 30px;
+}
+
+.hero-text p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    margin-bottom: 40px;
+    line-height: 1.9;
+}
+
+.hero-img img {
+    width: 500px;
+    height: auto;
+    transition: all 1s linear;
+}
+
+.hero-img img:hover {
+    width: 550px;
+}
+
+.hero-text a {
+    display: inline-block;
+    background-color: #ab10a32b;
+    border: 1px solid transparent;
+    padding: 15px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all 2s ease;
+}
+
+.hero-text a:hover {
+    background-color: transparent;
+    border: solid white;
+    transform: translateX(15px);
+}
+
+.hero-text a.contacto {
+    background-color: transparent;
+    border: solid white;
+    margin-left: 20px;
+}
+
+.hero-text a.contacto i {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.iconos {
+    position: absolute;
+    top: 50vh;
+    padding: 0 3%;
+    -ms-transform-origin-y: -50%;
+}
+
+.iconos i {
+    display: block;
+    margin: 26px 0;
+    font-size: 24px;
+    transition: all .5s ease;
+}
+
+.iconos i:hover {
+    color: #890a83;
+    transform: translateY(-5px);
+}
+
+
+/* Esto es para que la web sea responsive: */
+
+@media(max-width:992px) {
+    section {
+        padding: 0 3%;
+        transition: .2s;
+    }
+
+
+    .hero-text {
+        padding-top: 0;
+    }
+
+    .hero-img {
+        text-align: center;
+    }
+
+    .hero-img img {
+        width: 80%;
+        margin: 10% 0 0 10%;
+    }
+
+    .iconos {
+        display: none;
+    }
+
+    .scroll-down {
+        display: none;
+    }
+}
+
+@media(max-width: 768px) {
+    .menu-icon-action {
+        display: block;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .hero-text {
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-img img {
+        margin: 0;
+    }
+
+    .hero {
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .navlist {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 180px;
+        background-color: #3803367b;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all .5s ease-out;
+    }
+
+    .navlist a {
+        display: block;
+        margin: 7px 0;
+    }
+
+    #menu-toogle:checked+label.menu-icon-action+ul {
+        right: 0;
+    }
+}
+
+
+.sobre-mi1 {
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 5px;
+    margin: 15px;
+    color: #380336;
+    animation-name: proyecto;
+    animation-duration: 4s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite
+}
+
+@keyframes proyecto {
+
+    /* from */
+    0% {
+        color: rgb(155, 5, 189);
+
+    }
+
+    /* to  */
+    25% {
+        color: rgb(113, 11, 215);
+
+    }
+
+    50% {
+        color: rgb(230, 16, 123);
+
+    }
+
+    75% {
+        color: rgb(194, 56, 194);
+
+    }
+
+    100% {
+        color: rgb(102, 17, 98);
+
+    }
+}
+
+
+.sobre-mi-2 {
+    left: 110px;
+    font-size: 18px;
+    position: absolute;
+    display: block;
+    margin: 15px;
+    box-shadow: inset 0 0 15px rgb(128, 31, 177), 0 0 30px rgb(128, 31, 177);
+    border-radius: 20px;
+    display: inline-block;
+    transition: 2s;
+}
+
+.sobre-mi-2:hover {
+    background-image: url(assets/img/fondo-galaxia.png);
+    transform: scale(1.2);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ri-sparkling-2-fill {
+    animation-name: estrellas;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite
+}
+
+@keyframes estrellas {
+    0% {
+        color: silver;
+
+    }
+
+    /* to  */
+    25% {
+        color: transparent;
+
+    }
+
+    50% {
+        color: silver;
+
+    }
+
+    75% {
+        color: transparent;
+
+    }
+
+    100% {
+        color: silver;
+
+    }
+}
+
+.despedida {
+    display: block;
+    margin-top: 150px;
+    border: #5a0656;
+    border-radius: 16px;
+    box-shadow: inset 0 0 15px rgb(114, 17, 162), 0 0 30px rgb(114, 17, 162)
+}
+
+.despedida h4 {
+    margin-left: 30px;
+    margin-bottom: 10px;
+    top: 20px;
+    position: relative;
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+    font-family: monospace;
+    letter-spacing: 3px;
+}
+
+.despedida h5 {
+    margin-left: 30px;
+    position: relative;
+    top: 30px;
+    font-size: 20px;
+    font-family: monospace;
+
+}
+
+.despedida h6 {
+    position: relative;
+    top: 110px;
+    font-size: 15px;
+    margin-left: 30px;
+}
+
+
+.pedro-spinner {
+
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: 150px;
+    background: #000000;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 200px;
+    aspect-ratio: 1;
+    animation: rotate 6s linear infinite;
+}
+
+.pedrito {
+    display: block;
+    width: 100%;
+    animation: bounce 0.2s linear infinite alternate;
+}
+
+
+
+
+.formulario {
+
+    width: 600px;
+    height: 60px;
+    color: #ffffff;
+    background-color: #890a836c;
+    display: block;
+    box-shadow: #cc04e2;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 20px;
+    margin: 40px;
+    box-shadow: inset 0 0 15px rgb(114, 17, 162), 0 0 30px rgb(114, 17, 162);
+    border-radius: 20px;
+}
+
+#divDelFormulario {
+    position: relative;
+    margin-left: 280px;
+    margin-right: 280px;
+
+}
+
+#divDelFormulario h4{
+    margin-left: 30px;
+    margin-top: 150px;
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: underline;
+  text-decoration-color: rgba(146, 10, 167, 0.444);
+  text-shadow: 0 0 15px rgb(114, 17, 162), 0 0 30px rgb(114, 17, 162);
+}
+
+
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(-5%);
+    }
+
+    to {
+        transform: translateY(10%);
+    }
+}
